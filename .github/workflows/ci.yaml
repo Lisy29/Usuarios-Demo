@@ -23,7 +23,7 @@ jobs:
     - name: Ejecutar pruebas unitarias
       run: npm test
 
-    - name: Analizar codigo:
+    - name: Analizar codigo
       run: npm run lint
 
     - name: subir reporte del análisis
