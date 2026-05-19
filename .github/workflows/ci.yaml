@@ -22,4 +22,16 @@ jobs:
 
     - name: Ejecutar pruebas unitarias
       run: npm test
-    
+
+    - name: Analizar codigo:
+      run: npm run lint
+
+    - name: subir reporte del análisis
+      if: always() #failed() #succes()
+      uses: actions/upload-artifact@v4
+      with:
+        name: cobertura con node 22
+        path: coverage/
+        retention-days: 2
+        if-not-files-found: ignore
+        
